@@ -3,7 +3,11 @@
 > 2. 生成uml地址: [plantuml](http://www.plantuml.com/plantuml/uml)
 > 3. 相关文档在 `doc` 目录下
 
-
+### TODO
+- 前后置处理
+- aware处理
+- 基于注解的扫描
+- applicationContext
 
 ### 功能模块
 
