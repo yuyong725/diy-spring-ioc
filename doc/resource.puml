@@ -1,0 +1,10 @@
+@startuml
+
+interface Resource {
+InputStream getInputStream()
+boolean exists()
+}
+class ClassPathResource
+Resource <|-- ClassPathResource
+
+@enduml
