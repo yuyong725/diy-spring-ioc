@@ -1,5 +1,6 @@
 package cn.javadog.diy.spring.ioc.beandefinitionreader;
 
+
 import cn.javadog.diy.spring.ioc.resource.Resource;
 import org.w3c.dom.Document;
 
@@ -10,6 +11,6 @@ import org.w3c.dom.Document;
  */
 public interface DocumentLoader {
 
-	Document loadDocument(Resource resource);
+	Document loadDocument(Resource resource) throws Exception;
 
 }

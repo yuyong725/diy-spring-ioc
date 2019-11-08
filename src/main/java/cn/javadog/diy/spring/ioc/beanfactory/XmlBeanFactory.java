@@ -2,7 +2,6 @@ package cn.javadog.diy.spring.ioc.beanfactory;
 
 
 import cn.javadog.diy.spring.ioc.beandefinitionreader.XmlBeanDefinitionReader;
-import cn.javadog.diy.spring.ioc.exception.BeansException;
 import cn.javadog.diy.spring.ioc.resource.Resource;
 
 /**
@@ -15,9 +14,9 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 	/**
 	 * 用于将 资源文件 转换成 BeanDefinition
 	 */
-	private final XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader();
+	private final XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(this);
 
-	public XmlBeanFactory(Resource resource) throws BeansException {
+	public XmlBeanFactory(Resource resource) throws Exception {
 		this.reader.loadBeanDefinitions(resource);
 	}
 
