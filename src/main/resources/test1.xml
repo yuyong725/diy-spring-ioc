@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="simpleBeanA" class="cn.javadog.diy.spring.ioc.test.bean.SimpleBeanA">
+        <property name="name" value="simpleBeanA's name" />
+    </bean>
+
+    <bean id="simpleBeanB" class="cn.javadog.diy.spring.ioc.test.bean.SimpleBeanB" />
+
+    <bean id="AdvancedBeanA" class="cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanA" />
+    <bean id="AdvancedBeanB" class="cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanB" />
+
+    <bean id="AdvancedBeanC" class="cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanC">
+        <lookup-method name="getBean" bean="AdvancedBeanB" />
+    </bean>
+
+</beans>

@@ -21,4 +21,8 @@ public class XmlBeanFactory extends DefaultListableBeanFactory {
 	}
 
 
+	@Override
+	public BeanFactory getParentBeanFactory() {
+		return null;
+	}
 }

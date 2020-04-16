@@ -5,5 +5,5 @@ package cn.javadog.diy.spring.ioc.beanfactory;
  * @author Sprite
  * @date 2019年11月07日 11:16:00
  */
-public interface ConfigurableBeanFactory extends BeanFactory, SingletonBeanRegistry{
+public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, SingletonBeanRegistry{
 }

@@ -1,7 +1,5 @@
 package cn.javadog.diy.spring.ioc.beanfactory;
 
-import java.security.AccessController;
-import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,10 +23,14 @@ import cn.javadog.diy.spring.ioc.exception.BeansException;
 public abstract class DefaultListableBeanFactory implements AutowireCapableBeanFactory,
 	ListableBeanFactory, ConfigurableBeanFactory, BeanDefinitionRegistry {
 
-	/** Map of bean definition objects, keyed by bean name. */
+	/**
+	 * BeanDefinition 定义，键是bean的名称
+	 */
 	private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>(256);
 
-	/** List of bean definition names, in registration order. */
+	/**
+	 * 已注册的BeanDefinition的名称，按照注册的顺序
+	 */
 	private volatile List<String> beanDefinitionNames = new ArrayList<>(256);
 
 	/**

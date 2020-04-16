@@ -12,7 +12,6 @@ public interface SingletonBeanRegistry {
 	 */
 	void registerSingleton(String beanName, Object singletonObject);
 
-
 	/**
 	 * 从容器中获取指定 名称 的 实例
 	 */
