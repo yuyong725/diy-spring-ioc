@@ -3,17 +3,45 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="bfpp" class="cn.javadog.diy.spring.ioc.test.beanfactorypostprocessor.ObscenityRemovingBeanFactoryPostProcessor">
+        <property name="obscenities">
+            <set>
+                <value>bollocks</value>
+                <value>bum</value>
+                <value>Google</value>
+            </set>
+        </property>
+    </bean>
+
     <bean id="simpleBeanA" class="cn.javadog.diy.spring.ioc.test.bean.SimpleBeanA">
         <property name="name" value="simpleBeanA's name" />
     </bean>
 
     <bean id="simpleBeanB" class="cn.javadog.diy.spring.ioc.test.bean.SimpleBeanB" />
 
+    <bean id="simpleBeanC" class="cn.javadog.diy.spring.ioc.test.bean.SimpleBeanC">
+        <constructor-arg index="0">
+            <value>simpleBeanC'name</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="simpleBeanD" class="cn.javadog.diy.spring.ioc.test.bean.SimpleBeanD">
+        <property name="username" value="bollocks" />
+        <property name="password" value="imaginecup" />
+        <property name="nick" value="Google" />
+    </bean>
+
     <bean id="AdvancedBeanA" class="cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanA" />
     <bean id="AdvancedBeanB" class="cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanB" />
 
     <bean id="AdvancedBeanC" class="cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanC">
         <lookup-method name="getBean" bean="AdvancedBeanB" />
+        <replaced-method name="changeMe" replacer="replacer" />
     </bean>
 
+    <bean id="AdvancedBeanD" class="cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanD" />
+
+    <bean id="replacer" class="cn.javadog.diy.spring.ioc.test.bean.TestMethodReplacer" />
+
+    <bean id="myListener" class="cn.javadog.diy.spring.ioc.test.event.MyListener" />
 </beans>

@@ -1,10 +1,13 @@
 package cn.javadog.diy.spring.ioc.test;
 
 import cn.javadog.diy.spring.ioc.test.applicationcontext.MyApplicationContext;
+import cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanC;
 import cn.javadog.diy.spring.ioc.test.bean.SimpleBeanA;
 import cn.javadog.diy.spring.ioc.test.bean.SimpleBeanB;
+import cn.javadog.diy.spring.ioc.test.bean.SimpleBeanC;
+import cn.javadog.diy.spring.ioc.test.bean.SimpleBeanD;
+import cn.javadog.diy.spring.ioc.test.event.MyEvent;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author 余勇
@@ -20,6 +23,18 @@ public class Test1App {
 
 		SimpleBeanA simpleBeanA = applicationContext.getBean(SimpleBeanA.class);
 		System.out.println(simpleBeanA.getName());
+
+		SimpleBeanC simpleBeanC = applicationContext.getBean(SimpleBeanC.class);
+		System.out.println(simpleBeanC.getName());
+
+		SimpleBeanD simpleBeanD = applicationContext.getBean(SimpleBeanD.class);
+		System.out.println(simpleBeanD.toString());
+
+		AdvancedBeanC advancedBeanC = applicationContext.getBean(AdvancedBeanC.class);
+		advancedBeanC.showMe();
+		advancedBeanC.changeMe();
+
+		applicationContext.publishEvent(new MyEvent("hello", "msg"));
 	}
 
 }

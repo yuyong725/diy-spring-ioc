@@ -12,4 +12,7 @@ public abstract class AdvancedBeanC {
 
 	public abstract AdvancedBeanA getBean();
 
+	public void changeMe() {
+		System.out.println("AdvancedBeanC changeMe");
+	}
 }
