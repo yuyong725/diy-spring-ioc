@@ -13,7 +13,7 @@
         </property>
     </bean>
 
-    <bean id="simpleBeanA" class="cn.javadog.diy.spring.ioc.test.bean.SimpleBeanA">
+    <bean id="simpleBeanA" class="cn.javadog.diy.spring.ioc.test.bean.SimpleBeanA" init-method="initMethod">
         <property name="name" value="simpleBeanA's name" />
     </bean>
 
@@ -44,4 +44,14 @@
     <bean id="replacer" class="cn.javadog.diy.spring.ioc.test.bean.TestMethodReplacer" />
 
     <bean id="myListener" class="cn.javadog.diy.spring.ioc.test.event.MyListener" />
+
+    <bean id="SimpleBeanPostProcessorA" class="cn.javadog.diy.spring.ioc.test.beanpostprocessor.SimpleBeanPostProcessorA" />
+    <bean id="SimpleBeanPostProcessorB" class="cn.javadog.diy.spring.ioc.test.beanpostprocessor.SimpleBeanPostProcessorB" />
+
+    <bean id="circleBeanA" class="cn.javadog.diy.spring.ioc.test.bean.CircleBeanA" lazy-init="false">
+        <property name="circleBeanB" ref="circleBeanB" />
+    </bean>
+    <bean id="circleBeanB" class="cn.javadog.diy.spring.ioc.test.bean.CircleBeanB" lazy-init="false">
+        <property name="circleBeanA" ref="circleBeanA" />
+    </bean>
 </beans>

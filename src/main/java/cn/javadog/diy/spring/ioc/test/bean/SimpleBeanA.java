@@ -19,6 +19,8 @@ public class SimpleBeanA {
 		this.name = name;
 	}
 
-
+	public void initMethod() {
+		System.out.println("SimpleBeanA's init");
+	}
 
 }

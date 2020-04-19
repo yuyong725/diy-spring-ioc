@@ -26,7 +26,7 @@ public class MyApplicationContext extends ClassPathXmlApplicationContext {
 	@Override
 	protected void customizeBeanFactory(DefaultListableBeanFactory beanFactory) {
 		setAllowBeanDefinitionOverriding(false);
-		setAllowCircularReferences(false);
+		setAllowCircularReferences(true);
 		super.customizeBeanFactory(beanFactory);
 	}
 }

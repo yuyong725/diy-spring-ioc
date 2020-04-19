@@ -7,6 +7,10 @@ package cn.javadog.diy.spring.ioc.test.bean;
  */
 public class CircleBeanA {
 
+	public CircleBeanA() {
+		System.out.println("CircleBeanA 构造，此时 circleBeanB 是否为空？" + (circleBeanB == null));
+	}
+
 	private CircleBeanB circleBeanB;
 
 	public CircleBeanB getCircleBeanB() {
