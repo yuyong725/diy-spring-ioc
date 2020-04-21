@@ -2,6 +2,8 @@ package cn.javadog.diy.spring.ioc.test;
 
 import cn.javadog.diy.spring.ioc.test.applicationcontext.MyApplicationContext;
 import cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanC;
+import cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanE;
+import cn.javadog.diy.spring.ioc.test.bean.AdvancedBeanF;
 import cn.javadog.diy.spring.ioc.test.bean.CircleBeanA;
 import cn.javadog.diy.spring.ioc.test.bean.CircleBeanB;
 import cn.javadog.diy.spring.ioc.test.bean.SimpleBeanA;
@@ -43,6 +45,12 @@ public class Test1App {
 
 		CircleBeanB circleBeanB = applicationContext.getBean(CircleBeanB.class);
 		System.out.println("实例后CircleBeanA的属性CircleBeanB是否为空？" + (circleBeanB.getCircleBeanA() == null));
+
+		AdvancedBeanE advancedBeanE = applicationContext.getBean(AdvancedBeanE.class);
+		advancedBeanE.testAop();
+
+		AdvancedBeanF advancedBeanF = applicationContext.getBean(AdvancedBeanF.class);
+		advancedBeanF.testAop();
 	}
 
 }
